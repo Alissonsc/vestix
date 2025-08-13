@@ -9,17 +9,28 @@
 </head>
 <body>
 
+  <!-- 🔔 Barra Promocional -->
+  <div class="top-banner">
+    <p>🚚 Entrega no mesmo dia | 🎉 10% OFF na primeira compra | ⭐ Qualidade garantida</p>
+  </div>
+
+  <!-- 🧭 Cabeçalho -->
   <header>
     <div class="logo-nome">
       <img src="img/logoVestix.png" alt="Logo da Loja" class="logo-img">
       <span class="nome-loja">Vestix</span>
     </div>
-   <!-- <h1>Vestix Online</h1> -->
+
     <nav>
-      <a href="#">Início</a>
-      <a href="#">Roupas</a>
-      <a href="#">Contato</a>
+      <a href="#">Bonés</a>
+      <a href="#">Tênis</a>
+      <a href="#">Camisetas</a>
+      <a href="#">Blusa de Frio</a>
+      <a href="#">Slides</a>
+      <a href="#">Coleções</a>
+      <a href="#">Nossa Loja</a>
     </nav>
+
     <div class="top-right">
       <a href="#" title="Buscar"><i class="fa fa-search"></i></a>
       <a href="#" title="Login"><i class="fa fa-user"></i></a>
@@ -27,20 +38,20 @@
     </div>
   </header>
 
+  <!-- 📦 Carrossel -->
   <div class="carrossel">
-  <div class="slide active">
-    <img src="img/model1.png" alt="Promoção 1">
+    <div class="slide active">
+      <img src="img/model1.png" alt="Promoção 1">
+    </div>
+    <div class="slide">
+      <img src="img/model2.png" alt="Promoção 2">
+    </div>
+    <div class="slide">
+      <img src="img/model3.png" alt="Promoção 3">
+    </div>
   </div>
-  <div class="slide">
-    <img src="img/model2.png" alt="Promoção 2">
-  </div>
-  <div class="slide">
-    <img src="img/model3.png" alt="Promoção 3">
-  </div>
-</div>
 
-  <div class="banner"></div>
-
+  <!-- 🛍️ Produtos -->
   <section class="produtos">
     <div class="produto">
       <img src="img/bone.JPG" alt="Boné New Era">
@@ -57,13 +68,39 @@
       <h2>Jaqueta D Basic</h2>
       <p>R$249,99</p>
     </div>
+        <div class="produto">
+      <img src="img/bag new era.JPG" alt="Bag New Era">
+      <h2>Bag New Era</h2>
+      <p>R$149,99</p>
+    </div>
+        <div class="produto">
+      <img src="img/slide tommy.JPG" alt="Slide Tommy">
+      <h2>Slide Tommy</h2>
+      <p>R$199,99</p>
+    </div>
   </section>
 
+  <!-- 📞 Rodapé -->
   <footer>
     <p>&copy; 2025 Grupo Vestix - Todos os direitos reservados</p>
   </footer>
 
-  <!-- Carrega o JS após o conteúdo -->
-  <script src="js/script.js"></script>
+  <!-- 📜 Script do Carrossel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let index = 0;
+      const slides = document.querySelectorAll('.slide');
+
+      function showSlide() {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === index) slide.classList.add('active');
+        });
+        index = (index + 1) % slides.length;
+      }
+
+      setInterval(showSlide, 4000);
+    });
+  </script>
 </body>
 </html>
