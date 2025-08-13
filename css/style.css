@@ -180,3 +180,76 @@ footer {
     object-fit: cover;
   }
 }
+
+/* 🔧 Ajuste do container do cabeçalho */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* ☰ Botão hamburguer */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* 🧭 Menu padrão */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* 📱 Responsivo com hamburguer */
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #111;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu a {
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .logo-nome {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .top-right {
+    gap: 10px;
+  }
+}

@@ -12,3 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setInterval(showSlide, 4000);
 });
+
+// Menu hamburguer
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
